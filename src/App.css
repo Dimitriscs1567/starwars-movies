@@ -1,38 +1,129 @@
-.App {
-  text-align: center;
+.mainContainer {
+	width: 100%;
+	background-color: black;
+	height: 100vh;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.contentContainer {
+	max-width: 1200px;
+	background-color: white;
+	width: 100%;
+	margin: auto;
+	height: 100%;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.moviesContainer {
+	height: 100%;
+	flex-direction: row;
+	display: flex;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.moviesListContainer {
+	flex-basis: 50%;
+	border: 2px grey solid;
 }
 
-.App-link {
-  color: #61dafb;
+.movieDescriptionContainer {
+	flex-basis: 50%;
+	border: 2px grey solid;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.singleMovie {
+	flex-direction: row;
+	display: flex;
+	border-bottom: 1px grey solid;
+	padding: 10px 10px 10px 20px;
+	cursor: pointer;
+}
+
+.episodeContainer {
+	color: grey;
+	flex-basis: 25%;
+	font-size: 0.8em;
+	align-self: center;
+	cursor: pointer;
+}
+
+.titleContainer {
+	flex-basis: 50%;
+	font-weight: bold;
+	font-size: 0.9em;
+	text-align: left;
+	cursor: pointer;
+}
+
+.dateContainer {
+	color: grey;
+	flex-basis: 25%;
+	text-align: right;
+	font-size: 0.8em;
+	align-self: center;
+	cursor: pointer;
+}
+
+.noMovieDescription {
+	font-weight: bold;
+	font-size: 1.2em;
+	text-align: center;
+	padding-top: 50vh;
+}
+
+.withMovieDescription {
+	padding: 10px 10px 10px 10px;
+}
+
+.movieDescriptionTitle {
+	font-size: 1.2em;
+	font-weight: bold;
+	margin-bottom: 20px;
+}
+
+.movieDescriptionText {
+	font-size: 0.9em;
+	margin-bottom: 20px;
+}
+
+.movieDescriptionDirector {
+	font-size: 0.9em;
+}
+
+.headerContainer {
+	background-color: lightblue;
+	padding: 10px 20px 10px 20px;
+	display: flex;
+	flex-direction: row;
+}
+
+.buttonHeader {
+	padding: 5px 10px 5px 10px;
+	font-size: 0.9em;
+	background-color: lightblue;
+	border-radius: 5px;
+	border: 1px grey solid;
+	cursor: pointer;
+}
+
+.inputContainerHeader {
+	flex-grow: 1;
+	display: flex;
+	background-color: white;
+	margin-left: 20px;
+	border-radius: 5px;
+	border: 1px grey solid;
+	flex-direction: row;
+}
+
+.inputHeader {
+	border: none;
+	flex-grow: 1;
+}
+
+.inputHeader:focus {
+	outline: none;
+}
+
+.imgHeader {
+	height: 20px;
+	width: 20px;
+	margin: auto;
 }
