@@ -5,6 +5,7 @@ import Main from './components/Main';
 import { Movie } from './models/Movie';
 import { getAllMovies } from './services/api';
 import bgImage from './resources/images/background.jpg';
+import { sortByOption, SortOption } from './models/SortOption';
 
 function App() {
 	const [movies, setMovies] = useState<Movie[]>([]);
@@ -13,6 +14,7 @@ function App() {
 		undefined
 	);
 	const [filter, setFilter] = useState<string>('');
+	const [sortOption, setSortOption] = useState(SortOption.Year);
 
 	useEffect(() => {
 		getAllMovies().then((movies) => {
@@ -23,13 +25,23 @@ function App() {
 		});
 	}, []);
 
+	useEffect(() => {
+		if (movies.length > 0) {
+			setMovies([...sortByOption(sortOption, movies)]);
+		}
+	}, [sortOption]);
+
 	return (
 		<div
 			className="mainContainer"
 			style={{ backgroundImage: `url(${bgImage})` }}
 		>
 			<div className="contentContainer">
-				<Header setFilter={setFilter} />
+				<Header
+					sortOption={sortOption}
+					setSortOption={setSortOption}
+					setFilter={setFilter}
+				/>
 				<Main
 					movies={
 						filter.length > 0

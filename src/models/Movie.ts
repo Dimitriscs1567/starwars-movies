@@ -22,8 +22,6 @@ export class Movie {
 	}
 
 	static fromJson(json: any) {
-		console.log(json);
-
 		return new Movie(
 			`Episode ${numToRoman(json.episode_id)} - ${json.title}`,
 			json.episode_id,
